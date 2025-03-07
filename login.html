@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Cardápio</a></li>
+            <li><a href="#">Cadastro</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Horários</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <h2>Login Pizzaria</h2>
+        <form>
+            <div class="input-group">
+                <label for="txtNome">Nome</label>
+                <input type="text" id="txtNome" name="txtNome" placeholder="Digite seu nome" required>
+            </div>
+            <div class="input-group">  
+                <label for="txtEndereco">Endereço</label>
+                <input type="text" id="txtEndereco" name="txtEndereco" placeholder="Digite seu endereço" required>
+            </div>
+            <div class="input-group">  
+                <label for="txtCpf">CPF</label>
+                <input type="text" id="txtCpf" name="txtCpf" placeholder="Digite seu CPF" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>
