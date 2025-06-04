@@ -1,154 +1,350 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cardapio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - Mafia da Pizza</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="nav-header">
-            <h1>Pizzaria</h1>
-            <p>A melhor Pizzaria do bairro</p>
-        </div>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="cardapio.html">Cardápio</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Logo PizzaBolt">
+          <span>Mafia da Pizza</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html" class="active">Cardápio</a></li>
+          <li><a href="pedidos.html">Meus Pedidos</a></li>
+          <li><a href="login.html">Entrar</a></li>
+          <li>
+            <a href="carrinho.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-        <main class="main-content">
-            <h2 class="menu-title">Cardápio</h2>
+  <section class="page-header">
+    <div class="container">
+      <h1>Nosso Cardápio</h1>
+      <p>Confira nossas deliciosas opções de pizzas e bebidas</p>
+    </div>
+  </section>
 
-            <div class="menu-grid">
-                <section class="menu-section">
-                    <h3>Pizzas Tradicionais</h3>
-                    <div class="pizza-list">
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=400&h=300&fit=crop" alt="Pizza Margherita">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Margherita</h4>
-                                    <span class="price">R$ 45,00</span>
-                                </div>
-                                <p>Molho de tomate, mussarela, manjericão fresco</p>
-                            </div>
-                        </div>
+  <section class="menu-tabs">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" data-target="pizzas">Pizzas</button>
+        <button class="tab-btn" data-target="bebidas">Bebidas</button>
+      </div>
+    </div>
+  </section>
 
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?w=400&h=300&fit=crop" alt="Pizza Calabresa">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Calabresa</h4>
-                                    <span class="price">R$ 48,00</span>
-                                </div>
-                                <p>Molho de tomate, calabresa, cebola, mussarela</p>
-                            </div>
-                        </div>
-
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=300&fit=crop" alt="Pizza Portuguesa">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Portuguesa</h4>
-                                    <span class="price">R$ 52,00</span>
-                                </div>
-                                <p>Molho de tomate, presunto, ovos, cebola, ervilha, mussarela</p>
-                            </div>
-                        </div>
-
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" alt="Pizza Quatro Queijos">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Quatro Queijos</h4>
-                                    <span class="price">R$ 54,00</span>
-                                </div>
-                                <p>Molho de tomate, mussarela, parmesão, gorgonzola, catupiry</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="menu-section">
-                    <h3>Pizzas Especiais</h3>
-                    <div class="pizza-list">
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?w=400&h=300&fit=crop" alt="Pizza Bella Napoli">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Bella Napoli</h4>
-                                    <span class="price">R$ 68,00</span>
-                                </div>
-                                <p>Molho de tomate, burrata, presunto parma, rúcula, tomate cereja</p>
-                            </div>
-                        </div>
-
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop" alt="Pizza Pepperoni">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Pepperoni</h4>
-                                    <span class="price">R$ 56,00</span>
-                                </div>
-                                <p>Molho de tomate, pepperoni, mussarela, orégano</p>
-                            </div>
-                        </div>
-
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1511689660979-10d2b1aada49?w=400&h=300&fit=crop" alt="Pizza Vegetariana">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Vegetariana</h4>
-                                    <span class="price">R$ 50,00</span>
-                                </div>
-                                <p>Molho de tomate, palmito, champignon, pimentão, cebola, azeitonas</p>
-                            </div>
-                        </div>
-
-                        <div class="pizza-item">
-                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="Pizza Frutos do Mar">
-                            <div class="pizza-info">
-                                <div class="pizza-header">
-                                    <h4>Frutos do Mar</h4>
-                                    <span class="price">R$ 75,00</span>
-                                </div>
-                                <p>Molho de tomate, camarão, lula, polvo, mexilhão, mussarela</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+  <section class="menu-section" id="pizzas">
+    <div class="container">
+      <h2>Pizzas Tradicionais</h2>
+      <div class="menu-grid">
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0KFDZkjY8zVpr1ftr2n7Rm_OLf0Eq3inoxw&s" alt="Pizza Margherita">
+          </div>
+          <div class="pizza-info">
+            <h3>Margherita</h3>
+            <p>Molho de tomate, mussarela, tomate e manjericão fresco.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 49,90</span>
+              <button class="btn btn-sm" data-id="1" data-name="Margherita" data-price="49.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
             </div>
-        </main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Pizzaria</h3>
-                <p>A melhor Pizzaria do bairro</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
-                    <li><a href="login.html">Area do cliente</a></li>
-                    <li><a href="cardapio.html">Cardapio</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Horário de Funcionamento</h3>
-                <p>Segunda a Sexta: 18h às 23:30h</p>
-                <p>Sábado: 18h às 22h</p>
-            </div>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Pizzaria. Todos os direitos reservados.</p>
-        </div>
-    </footer>
 
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://static.barato.com.br/2024/0913/g_7b62dbd619.jpg" alt="Pizza Calabresa">
+          </div>
+          <div class="pizza-info">
+            <h3>Calabresa</h3>
+            <p>Molho de tomate, mussarela, calabresa fatiada e cebola.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 52,90</span>
+              <button class="btn btn-sm" data-id="2" data-name="Calabresa" data-price="52.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://alimentos10.com.br/wp-content/uploads/2023/06/imeretian-khachapuri-cheese-lemon-side-view-1.jpg" alt="Pizza Quatro Queijos">
+          </div>
+          <div class="pizza-info">
+            <h3>Quatro Queijos</h3>
+            <p>Molho de tomate, mussarela, provolone, parmesão e gorgonzola.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 55,90</span>
+              <button class="btn btn-sm" data-id="3" data-name="Quatro Queijos" data-price="55.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://www.ogastronomo.com.br/upload/389528334-curiosidades-sobre-a-pizza-portuguesa.jpg" alt="Pizza Portuguesa">
+          </div>
+          <div class="pizza-info">
+            <h3>Portuguesa</h3>
+            <p>Molho de tomate, mussarela, presunto, ovos, cebola e azeitonas.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 54,90</span>
+              <button class="btn btn-sm" data-id="4" data-name="Portuguesa" data-price="54.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOnR8l8Z1Vk9Bfe6urEoxG4VVY4DD-ELHQw&s" alt="Pizza Vegetariana">
+          </div>
+          <div class="pizza-info">
+            <h3>Vegetariana</h3>
+            <p>Molho de tomate, mussarela, tomate, pimentão, cebola, champignon e azeitonas.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 53,90</span>
+              <button class="btn btn-sm" data-id="5" data-name="Vegetariana" data-price="53.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://painacozinha.com/wp-content/uploads/230.Pizza-de-Frango-com-Catupiry.webp" alt="Pizza Frango com Catupiry">
+          </div>
+          <div class="pizza-info">
+            <h3>Frango com Catupiry</h3>
+            <p>Molho de tomate, mussarela, frango desfiado e catupiry.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 56,90</span>
+              <button class="btn btn-sm" data-id="6" data-name="Frango com Catupiry" data-price="56.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Pizzas Premium</h2>
+      <div class="menu-grid">
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://www.minhareceita.com.br/app/uploads/2022/12/pizza-de-pepperoni-caseira-portal-minha-receita.jpg" alt="Pizza Pepperoni">
+          </div>
+          <div class="pizza-info">
+            <h3>Pepperoni</h3>
+            <p>Molho de tomate, mussarela e pepperoni importado.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 59,90</span>
+              <button class="btn btn-sm" data-id="7" data-name="Pepperoni" data-price="59.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://www.doriana.com.br/wp-content/uploads/2022/07/pizza-de-rucula-1.png" alt="Pizza Rúcula com Parmesão">
+          </div>
+          <div class="pizza-info">
+            <h3>Rúcula com Parmesão</h3>
+            <p>Molho de tomate, mussarela, rúcula fresca e lascas de parmesão.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 58,90</span>
+              <button class="btn btn-sm" data-id="8" data-name="Rúcula com Parmesão" data-price="58.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section hidden" id="bebidas">
+    <div class="container">
+      <h2>Refrigerantes</h2>
+      <div class="menu-grid">
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coca-Cola 2L">
+          </div>
+          <div class="pizza-info">
+            <h3>Coca-Cola 2L</h3>
+            <p>Refrigerante Coca-Cola garrafa 2 litros.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 12,90</span>
+              <button class="btn btn-sm" data-id="b1" data-name="Coca-Cola 2L" data-price="12.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/14062/medium/refrigerante-antarctica-guarana-2l_18875.png" alt="Guaraná Antarctica 2L">
+          </div>
+          <div class="pizza-info">
+            <h3>Guaraná Antarctica 2L</h3>
+            <p>Refrigerante Guaraná Antarctica garrafa 2 litros.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 10,90</span>
+              <button class="btn btn-sm" data-id="b2" data-name="Guaraná Antarctica 2L" data-price="10.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/67855482/5473969_1.jpg?v=637945340966800000" alt="Sprite 2L">
+          </div>
+          <div class="pizza-info">
+            <h3>Sprite 2L</h3>
+            <p>Refrigerante Sprite garrafa 2 litros.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 11,90</span>
+              <button class="btn btn-sm" data-id="b3" data-name="Sprite 2L" data-price="11.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Cervejas</h2>
+      <div class="menu-grid">
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://tripfood.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2024/10/Heineken-600ml.jpg.webp" alt="Heineken 600ml">
+          </div>
+          <div class="pizza-info">
+            <h3>Heineken 600ml</h3>
+            <p>Cerveja Heineken garrafa 600ml.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 14,90</span>
+              <button class="btn btn-sm" data-id="b4" data-name="Heineken 600ml" data-price="14.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://choppbrahmaexpress.vtexassets.com/arquivos/ids/155978/cerveja-stella-artois-550ml-caixa-com-12-unidades.jpg?v=637353460307430000" alt="Stella Artois 550ml">
+          </div>
+          <div class="pizza-info">
+            <h3>Stella Artois 550ml</h3>
+            <p>Cerveja Stella Artois garrafa 550ml.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 13,90</span>
+              <button class="btn btn-sm" data-id="b5" data-name="Stella Artois 550ml" data-price="13.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Sucos</h2>
+      <div class="menu-grid">
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrZC3FyS5wAsL-DIb4DBivpf1jvBFenJ_0aA&s" alt="Suco de Laranja 500ml">
+          </div>
+          <div class="pizza-info">
+            <h3>Suco de Laranja 500ml</h3>
+            <p>Suco de laranja natural 500ml.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 9,90</span>
+              <button class="btn btn-sm" data-id="b6" data-name="Suco de Laranja 500ml" data-price="9.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://destro.fbitsstatic.net/img/p/suco-de-uva-aurora-integral-500ml-71610/258146-1.jpg?w=500&h=500&v=202501231555&qs=ignore" alt="Suco de Uva 500ml">
+          </div>
+          <div class="pizza-info">
+            <h3>Suco de Uva 500ml</h3>
+            <p>Suco de uva integral 500ml.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 8,90</span>
+              <button class="btn btn-sm" data-id="b7" data-name="Suco de Uva 500ml" data-price="8.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>PizzaBolt</h3>
+          <p>A melhor experiência em pizzas artesanais.</p>
+
+        </div>
+        <div class="footer-column">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda a Sexta: 18h às 23h</p>
+          <p>Sábados e Domingos: 18h às 00h</p>
+          <p>Feriados: 18h às 00h</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Rua das Pizzas, 123 - Centro</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@pizzabolt.com.br</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mafia da Pizza - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,61 +1,155 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu de Navegação</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mafia da Pizza - Pizzaria Deliciosa</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav>
-        <div class="nav-header">
-            <h1>Pizzaria</h1>
-            <p>A melhor Pizzaria do bairro</p>
-        </div>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="cardapio.html">Cardápio</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Logo PizzaBolt">
+          <span>Mafia da Pizza</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="pedidos.html">Meus Pedidos</a></li>
+          <li><a href="login.html">Entrar</a></li>
+          <li>
+            <a href="carrinho.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>Bem-vindo à pizzaria</h1>
-            <p>Descubra nossas opções de pizza</p>
-            <a href="cardapio.html" class="cta-button">Veja nosso cardapio</a>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>A melhor pizza da cidade</h1>
+        <p>Experimente nossas deliciosas pizzas artesanais, feitas com ingredientes frescos e de qualidade.</p>
+        <a href="cardapio.html" class="btn btn-primary">Ver Cardápio</a>
+      </div>
+    </div>
+  </section>
 
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Pizzaria</h3>
-                <p>A melhor Pizzaria do bairro</p>
+  <section class="featured">
+    <div class="container">
+      <h2>Mais Pedidas</h2>
+      <div class="featured-items">
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0KFDZkjY8zVpr1ftr2n7Rm_OLf0Eq3inoxw&s" alt="Pizza Margherita">
+          </div>
+          <div class="pizza-info">
+            <h3>Margherita</h3>
+            <p>Molho de tomate, mussarela, tomate e manjericão fresco.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 49,90</span>
+              <button class="btn btn-sm" data-id="1" data-name="Margherita" data-price="49.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
             </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
-                    <li><a href="login.html">Area do cliente</a></li>
-                    <li><a href="cardapio.html">Cardapio</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Horário de Funcionamento</h3>
-                <p>Segunda a Sexta: 18h às 23:30h</p>
-                <p>Sábado: 18h às 22h</p>
-            </div>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Pizzaria. Todos os direitos reservados.</p>
-        </div>
-    </footer>
 
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://static.barato.com.br/2024/0913/g_7b62dbd619.jpg" alt="Pizza Calabresa">
+          </div>
+          <div class="pizza-info">
+            <h3>Calabresa</h3>
+            <p>Molho de tomate, mussarela, calabresa fatiada e cebola.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 52,90</span>
+              <button class="btn btn-sm" data-id="2" data-name="Calabresa" data-price="52.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <img src="https://alimentos10.com.br/wp-content/uploads/2023/06/imeretian-khachapuri-cheese-lemon-side-view-1.jpg" alt="Pizza Quatro Queijos">
+          </div>
+          <div class="pizza-info">
+            <h3>Quatro Queijos</h3>
+            <p>Molho de tomate, mussarela, provolone, parmesão e gorgonzola.</p>
+            <div class="pizza-footer">
+              <span class="price">R$ 55,90</span>
+              <button class="btn btn-sm" data-id="3" data-name="Quatro Queijos" data-price="55.90">
+                <i class="fas fa-cart-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center">
+        <a href="cardapio.html" class="btn btn-outlined">Ver Todas as Opções</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Sobre a Mafia da Pizza</h2>
+          <p>Fundada em 2025, a Mafia da Pizza nasceu da paixão de três amigos pela verdadeira pizza artesanal.</p>
+          <p>Inspirados pela tradição italiana e pelo bom humor, criamos um espaço acolhedor, com sabores irresistíveis e um toque de mistério. </p>
+          <p>Aqui, a única coisa da qual você não pode escapar… é de mais uma fatia!
+Mafia da Pizza — ninguém escapa do sabor!</p>
+        </div>
+        <div class="about-image">
+          <img src="https://st2.depositphotos.com/1384136/8166/i/450/depositphotos_81664552-stock-photo-funny-pizza-chef.jpg" alt="Nossa Pizzaria">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Mafia da Pizza</h3>
+          <p>A melhor experiência em pizzas artesanais.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda a Sexta: 18h às 23h</p>
+          <p>Sábados e Domingos: 18h às 00h</p>
+          <p>Feriados: 18h às 00h</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Rua das Pizzas, 123 - Centro</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@MafiadaPizza.com.br</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mafia da Pizza - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

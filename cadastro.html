@@ -1,69 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Cadastro - Pizzaria</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Mafia da Pizza</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav>
-        <div class="nav-header">
-            <h1>Pizzaria</h1>
-            <p>A melhor Pizzaria do bairro</p>
-        </div>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="cardapio.html">Cardápio</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Logo PizzaBolt">
+          <span>Mafia da Pizza</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="pedidos.html">Meus Pedidos</a></li>
+          <li><a href="login.html">Entrar</a></li>
+          <li>
+            <a href="carrinho.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
         </ul>
-    </nav>
-<main>
-    <div class="login-container">
-        <h2>Cadastro Pizzaria</h2>
-        <form>
-            <div class="input-group">
-                <label for="txtNome">Nome:</label>
-                <input type="textNome" id="txtNome" name="txtNome" placeholder="Digite seu nome" required>
-            </div>
-            <div class="input-group">
-                <label for="txtEmail">Email:</label>
-                <input type="textEmail" id="txtEmail" name="txtEmail" placeholder="Digite seu email" required>
-            </div>
-            <button type="submit" onclick="acionarBotaoCadastro()" id="btnEnviar">Cadastrar</button>
-        </form>
+      </nav>
     </div>
-</main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Pizzaria</h3>
-                <p>A melhor Pizzaria do bairro</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
-                    <li><a href="login.html">Area do cliente</a></li>
-                    <li><a href="cardapio.html">Cardapio</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Horário de Funcionamento</h3>
-                <p>Segunda a Sexta: 18h às 23:30h</p>
-                <p>Sábado: 18h às 22h</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Pizzaria. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+  </header>
 
+  <section class="auth-section">
+    <div class="container">
+      <div class="auth-container">
+        <div class="auth-box register">
+          <h2>Cadastro</h2>
+          <form id="register-form" class="auth-form">
+            <div class="form-group">
+              <label for="register-name">Nome Completo</label>
+              <input type="text" id="register-name" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="register-email">E-mail</label>
+              <input type="email" id="register-email" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="register-cpf">CPF</label>
+              <input type="text" id="register-cpf" placeholder="000.000.000-00" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="register-phone">Telefone</label>
+              <input type="tel" id="register-phone" placeholder="(00) 00000-0000" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="register-address">Endereço</label>
+              <input type="text" id="register-address" placeholder="Rua, número, bairro" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="register-city">Cidade</label>
+                <input type="text" id="register-city" required>
+                <div class="error-message"></div>
+              </div>
+              <div class="form-group">
+                <label for="register-zipcode">CEP</label>
+                <input type="text" id="register-zipcode" placeholder="00000-000" required>
+                <div class="error-message"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="register-password">Senha</label>
+              <div class="password-field">
+                <input type="password" id="register-password" required>
+                <button type="button" class="toggle-password">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="register-confirm-password">Confirmar Senha</label>
+              <div class="password-field">
+                <input type="password" id="register-confirm-password" required>
+                <button type="button" class="toggle-password">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <div class="terms-checkbox">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></label>
+              </div>
+              <div class="error-message"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+          </form>
+          <div class="auth-footer">
+            <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>PizzaBolt</h3>
+          <p>A melhor experiência em pizzas artesanais.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda a Sexta: 18h às 23h</p>
+          <p>Sábados e Domingos: 18h às 00h</p>
+          <p>Feriados: 18h às 00h</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Rua das Pizzas, 123 - Centro</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@pizzabolt.com.br</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mafia da Pizza - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-    

@@ -1,64 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Pedidos - Mafia da Pizza</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav>
-        <div class="nav-header">
-            <h1>Pizzaria</h1>
-            <p>A melhor Pizzaria do bairro</p>
-        </div>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="cardapio.html">Cardápio</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Logo PizzaBolt">
+          <span>Mafia da Pizza</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="pedidos.html" class="active">Meus Pedidos</a></li>
+          <li><a href="login.html">Entrar</a></li>
+          <li>
+            <a href="carrinho.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
         </ul>
-    </nav>
-
-    <div class="login-container">
-        <h2>Rastrear Pedido</h2>
-    <div class="input-group">
-      <label for="numeroPedido">Número do Pedido:</label>
-      <input type="text" id="numeroPedido" placeholder="Ex: 12345">
+      </nav>
     </div>
-    <button onclick="rastrearPedido()">Rastrear</button>
-    <p id="resultadoRastreamento" style="margin-top: 20px; color: white;"></p>
-</div>
-      <script src="script.js"></script>
+  </header>
 
-      <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Pizzaria</h3>
-                <p>A melhor Pizzaria do bairro</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pedidos.html">Pedidos</a></li>
-                    <li><a href="login.html">Area do cliente</a></li>
-                    <li><a href="cardapio.html">Cardapio</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Horário de Funcionamento</h3>
-                <p>Segunda a Sexta: 18h às 23:30h</p>
-                <p>Sábado: 18h às 22h</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Pizzaria. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-      
+  <section class="page-header">
+    <div class="container">
+      <h1>Meus Pedidos</h1>
+      <p>Acompanhe o status dos seus pedidos</p>
+    </div>
+  </section>
 
+  <section class="orders-section">
+    <div class="container">
+      <div id="orders-container">
+        <!-- Exemplo de pedido ativo -->
+        <div class="order-card active-order">
+          <div class="order-header">
+            <div>
+              <h3>Pedido #12345</h3>
+              <span class="order-date">Hoje, 19:30</span>
+            </div>
+            <span class="order-status preparing">Preparando</span>
+          </div>
+          
+          <div class="order-progress">
+            <div class="progress-steps">
+              <div class="progress-step completed">
+                <div class="step-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="step-label">Pedido Confirmado</div>
+              </div>
+              <div class="progress-step active">
+                <div class="step-icon">
+                  <i class="fas fa-pizza-slice"></i>
+                </div>
+                <div class="step-label">Preparando</div>
+              </div>
+              <div class="progress-step">
+                <div class="step-icon">
+                  <i class="fas fa-motorcycle"></i>
+                </div>
+                <div class="step-label">Saiu para Entrega</div>
+              </div>
+              <div class="progress-step">
+                <div class="step-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div class="step-label">Entregue</div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 35%;"></div>
+            </div>
+          </div>
+          
+          <div class="order-items">
+            <h4>Itens do Pedido</h4>
+            <ul>
+              <li>
+                <span class="item-name">1x Pizza Margherita</span>
+                <span class="item-price">R$ 49,90</span>
+              </li>
+              <li>
+                <span class="item-name">1x Pizza Calabresa</span>
+                <span class="item-price">R$ 52,90</span>
+              </li>
+              <li>
+                <span class="item-name">2x Coca-Cola 2L</span>
+                <span class="item-price">R$ 25,80</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Total:</span>
+              <span>R$ 128,60</span>
+            </div>
+            <div class="order-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Rua Exemplo, 123 - Apto 42 - Centro</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Exemplo de pedido entregue -->
+        <div class="order-card">
+          <div class="order-header">
+            <div>
+              <h3>Pedido #12340</h3>
+              <span class="order-date">Ontem, 20:15</span>
+            </div>
+            <span class="order-status delivered">Entregue</span>
+          </div>
+          
+          <div class="order-items">
+            <h4>Itens do Pedido</h4>
+            <ul>
+              <li>
+                <span class="item-name">1x Pizza Quatro Queijos</span>
+                <span class="item-price">R$ 55,90</span>
+              </li>
+              <li>
+                <span class="item-name">1x Guaraná Antarctica 2L</span>
+                <span class="item-price">R$ 10,90</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Total:</span>
+              <span>R$ 76,80</span>
+            </div>
+            <div class="order-actions">
+              <button class="btn btn-sm">Pedir Novamente</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mensagem para quando não houver pedidos -->
+        <div class="no-orders hidden">
+          <i class="fas fa-pizza-slice"></i>
+          <h3>Você ainda não tem pedidos</h3>
+          <p>Que tal fazer seu primeiro pedido agora?</p>
+          <a href="cardapio.html" class="btn btn-primary">Ver Cardápio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Mafia da Pizza</h3>
+          <p>A melhor experiência em pizzas artesanais.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda a Sexta: 18h às 23h</p>
+          <p>Sábados e Domingos: 18h às 00h</p>
+          <p>Feriados: 18h às 00h</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Rua das Pizzas, 123 - Centro</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@pizzabolt.com.br</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mafia da Pizza - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

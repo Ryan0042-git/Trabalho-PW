@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - Mafia da Pizza</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Logo PizzaBolt">
+          <span>Mafia da Pizza</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="pedidos.html">Meus Pedidos</a></li>
+          <li><a href="login.html">Entrar</a></li>
+          <li>
+            <a href="carrinho.html" class="cart-icon active">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Seu Carrinho</h1>
+      <p>Revise seus itens e finalize seu pedido</p>
+    </div>
+  </section>
+
+  <section class="cart-section">
+    <div class="container">
+      <div class="cart-container">
+        <div class="cart-items" id="cart-items">
+          <!-- Os itens do carrinho serão inseridos aqui via JavaScript -->
+          <div class="empty-cart">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Seu carrinho está vazio</p>
+            <a href="cardapio.html" class="btn btn-primary">Ver Cardápio</a>
+          </div>
+        </div>
+        
+        <div class="cart-summary">
+          <h3>Resumo do Pedido</h3>
+          <div class="summary-item">
+            <span>Subtotal</span>
+            <span id="subtotal">R$ 0,00</span>
+          </div>
+          <div class="summary-item">
+            <span>Taxa de entrega</span>
+            <span id="delivery-fee">R$ 0,00</span>
+          </div>
+          <div class="summary-item total">
+            <span>Total</span>
+            <span id="total">R$ 0,00</span>
+          </div>
+          <button id="checkout-btn" class="btn btn-primary btn-block" disabled>Finalizar Pedido</button>
+          <a href="cardapio.html" class="btn btn-outlined btn-block">Continuar Comprando</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="checkout-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Finalizar Pedido</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="checkout-form">
+          <div class="form-section">
+            <h3>Endereço de Entrega</h3>
+            <div class="form-group">
+              <label for="address">Endereço Completo</label>
+              <input type="text" id="address" placeholder="Rua, número, bairro" required>
+            </div>
+            <div class="form-group">
+              <label for="complement">Complemento</label>
+              <input type="text" id="complement" placeholder="Apto, bloco, referência">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">Cidade</label>
+                <input type="text" id="city" required>
+              </div>
+              <div class="form-group">
+                <label for="zipcode">CEP</label>
+                <input type="text" id="zipcode" required>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h3>Forma de Pagamento</h3>
+            <div class="payment-methods">
+              <div class="payment-method">
+                <input type="radio" id="credit-card" name="payment" value="credit-card" checked>
+                <label for="credit-card">
+                  <i class="fas fa-credit-card"></i>
+                  Cartão de Crédito
+                </label>
+              </div>
+              <div class="payment-method">
+                <input type="radio" id="debit-card" name="payment" value="debit-card">
+                <label for="debit-card">
+                  <i class="fas fa-credit-card"></i>
+                  Cartão de Débito
+                </label>
+              </div>
+              <div class="payment-method">
+                <input type="radio" id="pix" name="payment" value="pix">
+                <label for="pix">
+                  <i class="fas fa-qrcode"></i>
+                  PIX
+                </label>
+              </div>
+              <div class="payment-method">
+                <input type="radio" id="cash" name="payment" value="cash">
+                <label for="cash">
+                  <i class="fas fa-money-bill-wave"></i>
+                  Dinheiro
+                </label>
+              </div>
+            </div>
+            
+            <div id="credit-card-details" class="payment-details">
+              <div class="form-group">
+                <label for="card-number">Número do Cartão</label>
+                <input type="text" id="card-number" placeholder="0000 0000 0000 0000" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-expiry">Validade</label>
+                  <input type="text" id="card-expiry" placeholder="MM/AA" required>
+                </div>
+                <div class="form-group">
+                  <label for="card-cvv">CVV</label>
+                  <input type="text" id="card-cvv" placeholder="123" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="card-name">Nome no Cartão</label>
+                <input type="text" id="card-name" required>
+              </div>
+            </div>
+            
+            <div id="pix-details" class="payment-details hidden">
+              <div class="pix-info">
+                <i class="fas fa-qrcode pix-qrcode"></i>
+                <p>Ao finalizar o pedido, você receberá um QR Code para pagamento.</p>
+              </div>
+            </div>
+            
+            <div id="cash-details" class="payment-details hidden">
+              <div class="form-group">
+                <label for="cash-change">Troco para</label>
+                <input type="text" id="cash-change" placeholder="R$ 0,00">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="order-summary">
+          <span>Total:</span>
+          <span id="modal-total">R$ 0,00</span>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-outlined close-modal">Cancelar</button>
+          <button id="confirm-order" class="btn btn-primary">Confirmar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Mafia da Pizza</h3>
+          <p>A melhor experiência em pizzas artesanais.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda a Sexta: 18h às 23h</p>
+          <p>Sábados e Domingos: 18h às 00h</p>
+          <p>Feriados: 18h às 00h</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Rua das Pizzas, 123 - Centro</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@pizzabolt.com.br</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mafia da Pizza - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
